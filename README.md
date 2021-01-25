@@ -118,7 +118,7 @@ Canonical link:
 // <link rel="canonical" href="/test/3">
 $control->setCanonical('/test/3');
 ```
-Prev (pagging):
+Prev (paging):
 ```php
 // <link rel="prev" href="test/3/page/1">
 $control->setPrev('/test/3/page/1');
