@@ -1,10 +1,9 @@
 Meta Control
 ============
 
-[![Build Status](https://github.com/nepada/meta-control/workflows/CI/badge.svg)](https://github.com/nepada/meta-control/actions?query=workflow%3ACI+branch%3Amaster)
-[![Coverage Status](https://coveralls.io/repos/github/nepada/meta-control/badge.svg?branch=master)](https://coveralls.io/github/nepada/meta-control?branch=master)
-[![Downloads this Month](https://img.shields.io/packagist/dm/nepada/meta-control.svg)](https://packagist.org/packages/nepada/meta-control)
-[![Latest stable](https://img.shields.io/packagist/v/nepada/meta-control.svg)](https://packagist.org/packages/nepada/meta-control)
+[![Build Status](https://github.com/vrestihnat/meta-canonical-control/workflows/CI/badge.svg)](https://github.com/vrestihnat/meta-canonical-control/actions?query=workflow%3ACI+branch%3Amaster)
+[![Downloads this Month](https://img.shields.io/packagist/dm/vrestihnat/meta-canonical-control.svg)](https://packagist.org/packages/vrestihnat/meta-canonical-control)
+[![Latest stable](https://img.shields.io/packagist/v/vrestihnat/meta-canonical-control.svg)](https://packagist.org/packages/vrestihnat/meta-canonical-control)
 
 
 Installation
@@ -13,7 +12,7 @@ Installation
 Via Composer:
 
 ```sh
-$ composer require nepada/meta-control
+$ composer require vrestihnat/meta-canonical-control
 ```
 
 
@@ -24,7 +23,7 @@ First register the control factory in your config and optionally set up default 
 ```yaml
 services:
     -
-        implement: Nepada\MetaControl\MetaControlFactory
+        implement: Vrestihnat\MetaControl\IMetaControlFactory
         setup:
             - setCharset('utf-8')
             - setAuthor('Jon Doe')
@@ -32,7 +31,7 @@ services:
 
 Use the control factory in your presenter:
 ```php
-protected function createComponentMeta(): Nepada\MetaControl\MetaControl
+protected function createComponentMeta(): Vrestihnat\MetaControl\MetaControl
 {
     $control = $this->metaControlFactory->create();
     $control->setDescription('Lorem ipsum');
@@ -111,4 +110,28 @@ Robots:
 // <meta name="robots" content="noindex, nofollow">
 $control->setRobots('noindex, nofollow');
 $control->getRobots(); // 'noindex, nofollow'
+```
+### New features
+
+Canonical link:
+```php
+// <link rel="canonical" href="/test/3">
+$control->setCanonical('/test/3');
+```
+Prev (pagging):
+```php
+// <link rel="prev" href="test/3/page/1">
+$control->setPrev('/test/3/page/1');
+```
+Next (paging):
+```php
+// <link rel="next" href="/test/3/page/3">
+$control->setNext('/test/3/page/3');
+```
+Set not unique meta e.g. google-site-verification
+```php
+// <meta name="google-site-verification" content="123456789abcdefghijklmnopqrstuvwxyzABCDEFGH">\n<meta name="google-site-verification" content="HGFEDCBAzyxwvutsrqponmlkjihgfedcba987654321">\n
+
+$control->setMetadata('google-site-verification', '123456789abcdefghijklmnopqrstuvwxyzABCDEFGH');
+$control->setMetadata('google-site-verification', 'HGFEDCBAzyxwvutsrqponmlkjihgfedcba987654321');
 ```
