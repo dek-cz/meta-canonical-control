@@ -37,7 +37,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          coverage: none
+          coverage: xdebug
       - name: Build
         env:
           COMPOSER_ARGS: ${{ matrix.composer_args }}
