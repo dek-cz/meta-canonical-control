@@ -39,7 +39,8 @@
     "phpunit/phpunit": "^9.5",
     "phpstan/phpstan": "^0.12.69",
     "phpstan/phpstan-nette": "^0.12.14",
-    "spaze/phpstan-disallowed-calls": "^1.1"
+    "spaze/phpstan-disallowed-calls": "^1.1",
+    "phpunit/php-code-coverage": "^9.2"
   },
   "scripts": {
         "phpstan": "phpstan analyse src/ -c phpstan.neon.dist --level=4 --no-progress -vvv"
