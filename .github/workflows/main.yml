@@ -46,3 +46,8 @@ jobs:
         run: vendor/bin/phpunit
       - name: PHPStan
         run: composer phpstan 
+      
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
