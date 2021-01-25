@@ -43,11 +43,11 @@ jobs:
           COMPOSER_ARGS: ${{ matrix.composer_args }}
         run: composer update --no-interaction --no-progress --prefer-dist $COMPOSER_ARGS
       - name: Tests
-        run: vendor/bin/phpunit
+        run: "vendor/bin/phpunit --coverage-clover=coverage.xml"
       - name: PHPStan
         run: composer phpstan 
       
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Send code coverage report to Codecov.io"
+        env:
+          CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
+        run: "bash <(curl -s https://codecov.io/bash) || true"
