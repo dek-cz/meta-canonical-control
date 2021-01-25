@@ -4,7 +4,7 @@ Meta Control
 [![Build Status](https://github.com/vrestihnat/meta-canonical-control/workflows/CI/badge.svg)](https://github.com/vrestihnat/meta-canonical-control/actions?query=workflow%3ACI+branch%3Amaster)
 [![Downloads this Month](https://img.shields.io/packagist/dm/vrestihnat/meta-canonical-control.svg)](https://packagist.org/packages/vrestihnat/meta-canonical-control)
 [![Latest stable](https://img.shields.io/packagist/v/vrestihnat/meta-canonical-control.svg)](https://packagist.org/packages/vrestihnat/meta-canonical-control)
-
+[![Coverage Status](https://coveralls.io/repos/github/vrestihnat/meta-canonical-control/badge.svg?branch=master)](https://coveralls.io/github/vrestihnat/meta-canonical-control?branch=master)
 
 Installation
 ------------
