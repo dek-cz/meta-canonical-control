@@ -1,9 +1,9 @@
 <?php
 declare(strict_types = 1);
 
-namespace Nepada\MetaControl;
+namespace Vrestihnat\MetaControl;
 
-interface MetaControlFactory
+interface IMetaControlFactory
 {
 
     public function create(): MetaControl;
