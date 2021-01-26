@@ -125,6 +125,7 @@ class MetaControl extends Nette\Application\UI\Component
 
   public function setAuthor(?string $author): void
   {
+    $this->setMetadata(self::META_AUTHOR, null);
     $this->setMetadata(self::META_AUTHOR, $author);
   }
 
@@ -135,6 +136,7 @@ class MetaControl extends Nette\Application\UI\Component
 
   public function setDescription(?string $description): void
   {
+    $this->setMetadata(self::META_DESCRIPTION, null);
     $this->setMetadata(self::META_DESCRIPTION, $description);
   }
 
@@ -173,6 +175,7 @@ class MetaControl extends Nette\Application\UI\Component
 
   public function setRobots(?string $robots): void
   {
+    $this->setMetadata(self::META_ROBOTS, null);
     $this->setMetadata(self::META_ROBOTS, $robots);
   }
 
