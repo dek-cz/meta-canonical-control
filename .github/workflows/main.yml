@@ -53,7 +53,7 @@ jobs:
       - name: Upload coverage results to Coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: "vendor/bin/php-coveralls --coverage_clover=coverage.xml -v"
+        run: "vendor/bin/php-coveralls --config tests/coveralls.yml -v"
           
       - name: PHPStan
         run: composer phpstan 
