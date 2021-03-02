@@ -1,12 +1,12 @@
 {
-  "name": "vrestihnat/meta-canonical-control",
+  "name": "dek-cz/meta-canonical-control",
   "type": "library",
   "license": "BSD-3-Clause",
   "description": "Nette control for managing meta data and canonical link in HTML header.",
   "keywords": ["meta", "header", "component", "nette", "canonical", "seo"],
   "support": {
-    "email": "bfj@bflm.eu",
-    "issues": "https://github.com/vrestihnat/title-control/issues"
+    "email": "jan.zaruba@dek-cz.com",
+    "issues": "https://github.com/dek-cz/title-control/issues"
   },
   "authors": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "name": "Jan Záruba",
-      "email": "bfj@bflm.eu"
+      "email": "jan.zaruba@dek-cz.com"
     }
   ],
   "require": {
