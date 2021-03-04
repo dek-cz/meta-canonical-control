@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace VrestihnatTests\Unit;
+namespace DekczTests\Unit;
 
-use Vrestihnat\MetaControl\MetaControl;
+use Dekcz\MetaControl\MetaControl;
 
 class MetaControlTest extends Test
 {

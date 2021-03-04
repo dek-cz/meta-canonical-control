@@ -1,5 +1,5 @@
 Copyright (c) 2017, 2019 Petr Morávek (petr@pada.cz),
-          (c) 2021 vrestihnat
+          (c) 2021 Jan Záruba (jan.zaruba@dek-cz.com)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

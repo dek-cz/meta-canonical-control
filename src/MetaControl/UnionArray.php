@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Vrestihnat\MetaControl;
+namespace Dekcz\MetaControl;
 
 class UnionArray implements \ArrayAccess, \Iterator, \Countable
 {

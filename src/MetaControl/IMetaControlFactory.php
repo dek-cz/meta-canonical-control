@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Vrestihnat\MetaControl;
+namespace Dekcz\MetaControl;
 
 interface IMetaControlFactory
 {

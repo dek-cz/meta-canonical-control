@@ -23,7 +23,7 @@ First register the control factory in your config and optionally set up default 
 ```yaml
 services:
     -
-        implement: Vrestihnat\MetaControl\IMetaControlFactory
+        implement: Dekcz\MetaControl\IMetaControlFactory
         setup:
             - setCharset('utf-8')
             - setAuthor('Jon Doe')
@@ -31,7 +31,7 @@ services:
 
 Use the control factory in your presenter:
 ```php
-protected function createComponentMeta(): Vrestihnat\MetaControl\MetaControl
+protected function createComponentMeta(): Dekcz\MetaControl\MetaControl
 {
     $control = $this->metaControlFactory->create();
     $control->setDescription('Lorem ipsum');

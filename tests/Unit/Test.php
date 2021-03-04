@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VrestihnatTests\Unit;
+namespace DekczTests\Unit;
 
 use PHPUnit\Framework\TestCase;
 

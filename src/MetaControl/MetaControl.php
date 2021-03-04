@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Vrestihnat\MetaControl;
+namespace Dekcz\MetaControl;
 
 use Nette;
 use Nette\Utils\Html;

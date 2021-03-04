@@ -6,7 +6,7 @@
   "keywords": ["meta", "header", "component", "nette", "canonical", "seo"],
   "support": {
     "email": "jan.zaruba@dek-cz.com",
-    "issues": "https://github.com/dek-cz/title-control/issues"
+    "issues": "https://github.com/dek-cz/meta-canonical-control/issues"
   },
   "authors": [
     {
@@ -24,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Vrestihnat\\MetaControl\\": "src/MetaControl/"
+      "Dekcz\\MetaControl\\": "src/MetaControl/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "VrestihnatTests\\": "tests/"
+      "DekczTests\\": "tests/"
     }
   },
   "config": {
