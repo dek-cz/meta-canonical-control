@@ -2,8 +2,8 @@ Meta Control
 ============
 
 [![Build Status](https://github.com/dek-cz/meta-canonical-control/workflows/CI/badge.svg)](https://github.com/dek-cz/meta-canonical-control/actions?query=workflow%3ACI+branch%3Amaster)
-[![Downloads this Month](https://img.shields.io/packagist/dm/vrestihnat/meta-canonical-control.svg)](https://packagist.org/packages/vrestihnat/meta-canonical-control)
-[![Latest stable](https://img.shields.io/packagist/v/vrestihnat/meta-canonical-control.svg)](https://packagist.org/packages/vrestihnat/meta-canonical-control)
+[![Downloads this Month](https://img.shields.io/packagist/dm/dek-cz/meta-canonical-control.svg)](https://packagist.org/packages/dek-cz/meta-canonical-control)
+[![Latest stable](https://img.shields.io/packagist/v/dek-cz/meta-canonical-control.svg)](https://packagist.org/packages/dek-cz/meta-canonical-control)
 [![Coverage Status](https://coveralls.io/repos/github/dek-cz/meta-canonical-control/badge.svg?branch=master)](https://coveralls.io/github/dek-cz/meta-canonical-control?branch=master)
 
 Installation
@@ -12,7 +12,7 @@ Installation
 Via Composer:
 
 ```sh
-$ composer require vrestihnat/meta-canonical-control
+$ composer require dek-cz/meta-canonical-control
 ```
 
 
