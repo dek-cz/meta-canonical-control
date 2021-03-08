@@ -41,8 +41,14 @@ jobs:
         env:
           COMPOSER_ARGS: ${{ matrix.composer_args }}
         run: composer update --no-interaction --no-progress --prefer-dist $COMPOSER_ARGS
-      - name: Tests
-        run: "vendor/bin/phpunit --coverage-clover=coverage.xml"
+      - name: Linter, codesniffer
+        run: "composer qa"
+        
+      - name: Phpstan
+        run: "composer phpstan"
+        
+      - name: Tests with coverage xml result
+        run: "composer coverage"
       
       - name: "Send code coverage report to Codecov.io"
         env:

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types = 1);
 
 $p1 = __DIR__ . '/../vendor/autoload.php';
