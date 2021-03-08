@@ -8,20 +8,36 @@ use ArrayAccess;
 use Countable;
 use Iterator;
 
+/**
+ * @implements ArrayAccess<string,string>
+ * @implements Iterator<string,string>
+ */
 class UnionArray implements ArrayAccess, Iterator, Countable
 {
 
+    /** @var array<int,string> $keys */
     private array $keys = [];
+
+    /** @var array<int,string> $values */
     private array $values = [];
     private int $pointer = 0;
 
+    /**
+     * @param array<string,string> $from
+     */
     public function __construct(array $from = [])
     {
         $this->keys = array_keys($from);
         $this->values = array_values($from);
     }
 
-    private function arraySearchAll($m_needle, $a_haystack, $b_strict = false)
+    /**
+     * @param string $m_needle
+     * @param array<int,string> $a_haystack
+     * @param bool $b_strict
+     * @return array<int,string>
+     */
+    private function arraySearchAll(string $m_needle, array $a_haystack, bool $b_strict = false): array
     {
         return array_intersect_key($a_haystack, array_flip(array_keys($a_haystack, $m_needle, $b_strict)));
     }
@@ -71,7 +87,11 @@ class UnionArray implements ArrayAccess, Iterator, Countable
         return null;
     }
 
-    public function offsetGetAll($key): array
+    /**
+     * @param string $key
+     * @return array<int,string>
+     */
+    public function offsetGetAll(string $key): array
     {
         $a = [];
         foreach ($this->arraySearchAll($key, $this->keys) as $i => $v) {
@@ -84,10 +104,10 @@ class UnionArray implements ArrayAccess, Iterator, Countable
     /**
      * will only append new entries, not overwrite existing
      */
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value): void
     {
-        $this->keys[] = $key;
-        $this->values[] = $value;
+        $this->keys[] = (string) $key;
+        $this->values[] = (string) $value;
     }
 
     /**
@@ -104,7 +124,7 @@ class UnionArray implements ArrayAccess, Iterator, Countable
         }
     }
 
-    public function offsetUnsetAll($key)
+    public function offsetUnsetAll(string $key): void
     {
         $tmp = $this->keys;
         foreach ($this->arraySearchAll($key, $tmp) as $i => $v) {
