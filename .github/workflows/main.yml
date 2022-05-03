@@ -23,8 +23,8 @@ jobs:
       fail-fast: false
       matrix:
         php:
-          - 7.4
           - 8.0
+          - 8.1
         composer_args:
           - ''
           - '--prefer-stable'
