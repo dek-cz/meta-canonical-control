@@ -139,7 +139,7 @@ class UnionArray implements ArrayAccess, Iterator, Countable
 
     public function offsetExists(mixed $offset): bool
     {
-        return array_search($key, $this->keys) !== false;
+        return array_search($offset, $this->keys) !== false;
     }
 
 }
