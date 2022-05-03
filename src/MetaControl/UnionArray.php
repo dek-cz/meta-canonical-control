@@ -50,27 +50,27 @@ class UnionArray implements ArrayAccess, Iterator, Countable
         return count($this->keys);
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->values[$this->pointer];
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->keys[$this->pointer];
     }
 
-    public function next()
+    public function next(): void
     {
         $this->pointer++;
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->pointer = 0;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return isset($this->keys[$this->pointer]);
     }
@@ -78,9 +78,9 @@ class UnionArray implements ArrayAccess, Iterator, Countable
     /**
      * just fetches the first found entry
      */
-    public function offsetGet($key)
+    public function offsetGet(mixed $offset): mixed
     {
-        if (($i = array_search($key, $this->keys)) !== false) {
+        if (($i = array_search($offset, $this->keys)) !== false) {
             return $this->values[$i];
         }
 
@@ -104,18 +104,18 @@ class UnionArray implements ArrayAccess, Iterator, Countable
     /**
      * will only append new entries, not overwrite existing
      */
-    public function offsetSet($key, $value): void
+    public function offsetSet(mixed $offset, mixed $value): void
     {
-        $this->keys[] = (string) $key;
+        $this->keys[] = (string) $offset;
         $this->values[] = (string) $value;
     }
 
     /**
      * removes first matching entry
      */
-    public function offsetUnset($key)
+    public function offsetUnset(mixed $offset): void
     {
-        if (($i = array_search($key, $this->keys)) !== false) {
+        if (($i = array_search($offset, $this->keys)) !== false) {
             unset($this->keys[$i]);
             unset($this->values[$i]);
             // keep entries continuos for iterator
@@ -137,7 +137,7 @@ class UnionArray implements ArrayAccess, Iterator, Countable
         $this->values = array_values($this->values);
     }
 
-    public function offsetExists($key)
+    public function offsetExists(mixed $offset): bool
     {
         return array_search($key, $this->keys) !== false;
     }
